@@ -23,7 +23,7 @@
     "docs": "npm-run-all docs:*",
     "docs:api": "jsdoc src -g plugins/markdown -r -d docs/api",
     "docs:toc": "doctoc --notitle README.md",
-    "lint": "vjsstandard",
+    "lint": "npx eslint src",
     "server": "karma start scripts/karma.conf.js --singleRun=false --auto-watch",
     "start": "npm-run-all -p server watch",
     "pretest": "npm-run-all lint build",

@@ -3,7 +3,7 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended","videojs"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly",
@@ -15,5 +15,7 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
+        "require-jsdoc": 0,
+        "no-inline-comments": 0
     }
 };
