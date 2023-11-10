@@ -1,7 +1,7 @@
 {
-  "name": "videojs-shaka",
-  "version": "1.1.2",
-  "description": "video.js shaka player tech",
+  "name": "@college-africa/videojs-shaka",
+  "version": "1.1.3",
+  "description": "Updated video.js shaka player tech",
   "main": "dist/videojs-shaka.cjs.js",
   "module": "dist/videojs-shaka.es.js",
   "browser": "dist/videojs-shaka.js",

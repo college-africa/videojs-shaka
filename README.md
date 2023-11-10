@@ -1,6 +1,6 @@
 # videojs-shaka
 
-shaka player
+This is an updated fork of [videojs-shaka](https://www.npmjs.com/package/videojs-shaka)
 
 ## Table of Contents
 
