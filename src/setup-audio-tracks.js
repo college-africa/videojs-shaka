@@ -29,8 +29,7 @@ function handleAudioTracksAdded(tech, shakaPlayer, tracks) {
 
   function findDashAudioTrack(subDashAudioTracks, videojsAudioTrack) {
     return subDashAudioTracks.find((track) =>
-      generateLabelFromTrack(track) === videojsAudioTrack.label
-    );
+      generateLabelFromTrack(track) === videojsAudioTrack.label);
   }
 
   // Safari creates a single native `AudioTrack` (not `videojs.AudioTrack`) when loading. Clear all
@@ -51,15 +50,13 @@ function handleAudioTracksAdded(tech, shakaPlayer, tracks) {
     }
 
     // Add the track to the player's audio track list.
-    videojsAudioTracks.addTrack(
-      new videojs.AudioTrack({
-        enabled: dashTrack === currentAudioTrack,
-        id: generateIdFromTrackIndex(index),
-        kind: 'main',
-        label,
-        language: dashTrack.language
-      })
-    );
+    videojsAudioTracks.addTrack(new videojs.AudioTrack({
+      enabled: dashTrack === currentAudioTrack,
+      id: generateIdFromTrackIndex(index),
+      kind: 'main',
+      label,
+      language: dashTrack.language
+    }));
   });
 
   const audioTracksChangeHandler = () => {

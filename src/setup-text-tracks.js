@@ -64,8 +64,10 @@ function attachDashTextTracksToVideojs(tech, shakaPlayer, tracks) {
         // Find the dash track we want to use
 
         /* jshint loopfunc: true */
-        const dictionaryLookupResult = find(trackDictionary,
-          (track) => track.textTrack === textTrack);
+        const dictionaryLookupResult = find(
+          trackDictionary,
+          (track) => track.textTrack === textTrack
+        );
         /* jshint loopfunc: false */
 
         dashTrackToActivate = dictionaryLookupResult ?

@@ -21,6 +21,7 @@ function _getQuality(tech, shakaPlayer) {
     const track = level;
 
     let label = '';
+
     if (level.height >= 2160) {
       label = ' (4k)';
     } else if (level.height >= 1440) {
@@ -75,7 +76,7 @@ export default function setupQualityTracks(tech, shakaPlayer) {
     qualityData: {
       video: _getQuality(tech, shakaPlayer)
     },
-    qualitySwitchCallback: function(id, type) {
+    qualitySwitchCallback(id, type) {
 
       // Update the adaptation.
       shakaPlayer.configure({
@@ -85,7 +86,9 @@ export default function setupQualityTracks(tech, shakaPlayer) {
       });
 
       // Is auto?
-      if (id === -1) return;
+      if (id === -1) {
+        return;
+      }
 
       const tracks = shakaPlayer.getVariantTracks().filter(function(t) {
         return t.id === id && t.type === 'variant';
@@ -97,6 +100,7 @@ export default function setupQualityTracks(tech, shakaPlayer) {
       // todo - need to figure out how to do this in non debug mode
       if (shaka.util.FakeEvent) {
         const event = new shaka.util.FakeEvent('variantchanged');
+
         shakaPlayer.dispatchEvent(event);
       }
     }
